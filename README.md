@@ -11,6 +11,7 @@ In addition to supporting languages that use spaces to separate words, it also s
 - Multi-language Support
 - Count words, lines, characters, and characters with spaces
 - Selection text count
+- Supports Markdown, Plaintext, and Quarto (.qmd) files
 
 ### Multi-language Support
 

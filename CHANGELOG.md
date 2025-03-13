@@ -35,3 +35,7 @@
 🔧 Fixed: Separation character does not display properly [#3](https://github.com/curly210102/vscode-markdown-word-count/issues/3)
 
 💬 Document: multi-language introduction
+
+## [0.0.8]
+
+🆕 Added: Support for Quarto (.qmd) files [#6](https://github.com/curly210102/vscode-markdown-word-count/issues/6)

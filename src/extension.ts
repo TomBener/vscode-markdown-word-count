@@ -82,9 +82,12 @@ class WordCountUIUpdater {
       this.statusBarItem.hide();
       return;
     }
+    
     const isMarkdown = editor.document.languageId === "markdown";
     const isPlaintext = editor.document.languageId === "plaintext";
-    if (!isMarkdown && !isPlaintext) {
+    const isQuarto = editor.document.languageId === "quarto";
+    
+    if (!isMarkdown && !isPlaintext && !isQuarto) {
       this.statusBarItem.hide();
       return;
     }
@@ -95,7 +98,9 @@ class WordCountUIUpdater {
         content: markdownContent,
         frontMatterEndLine,
       } = getMarkdownContent(docContent);
-      const mainContent = isMarkdown ? markdownContent : docContent;
+      // Process QMD files like markdown files
+      const isMarkdownLike = isMarkdown || isQuarto;
+      const mainContent = isMarkdownLike ? markdownContent : docContent;
       const selectionCount: IWordCountResult = {
         words: 0,
         lines: 0,
